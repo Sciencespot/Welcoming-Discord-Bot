@@ -14,13 +14,17 @@ class MyClient(discord.Client):
             return
 
         if message.content.startswith('hi') or message.content.startswith('Hi'):
-            await message.channel.send('Hello {0.author.mention} you can write your commands in the bots text channel.....'.format(message))
+            await message.channel.send('Hello {0.author.mention} you can write your commands in the bots text channel.....Type s or S to learn about different commands of the different bots.'.format(message))
             print("Someone said Hi")
 
-        if message.content.startswith('S') or message.content.startswith('s'):
+        elif message.content.startswith('p'):
+            print("Someone is chatting with Pokecord.")
+
+        elif message.content.startswith('S') or message.content.startswith('s'):
             await message.channel.send("""These are the Commands:-
 1. s, S - Learn about commands
-2. hi, Hi - The casual command""")
+2. hi, Hi - The casual command
+3. p!help - The command to learn to control Pokecord Bot. The messages sent by your bot can be seen on DM Messages.""")
             print("Someone is learning about Commands.")
 
     async def on_member_join(self, member):
@@ -31,5 +35,4 @@ class MyClient(discord.Client):
             print("Someone has joined our server.....")
 
 client = MyClient()
-client.run('NTY1MDgyNzUwMzc4NTczODM0.XKxV9Q.ne7eIZz3aya_Gr7OX2u7y-3t7c8')
-
+client.run('NTY2MjU3Njc4NTM2NDA5MDg5.XLCW5A.Aw_Q1cn6Z9EpnoQdYSzrhRPfsu0')
